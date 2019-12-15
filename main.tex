@@ -55,13 +55,18 @@
 KEY WORDS: Key word one; Key word two; Key word three; Key word four.
 
 \section{Introduction}
+Over the past eight years, home prices in the Boise metro area have increased very rapidly, outpacing even some of the largest real estate markets in the country. I was interested in seeing what factors might be influencing this rise, and decided to investigate changes in the Boise Metro Area job market to see if changes in employment types could be leading to the rise in prices. This paper will be comparing changes in Tax Assessed Values (TAV) from 2000-2018 with the changes in Employment by sector over the same time period. 
 
+Earlier this year, the Brookings Institution published a study on employment growth across the nation, and used Boise as one of the case studies. Their analysis highlighted some of the areas where Boise's employment opportunities are growing, as well as the ones that are shrinking. I will use this data as a starting point to determine which sectors to analyze in more detail.
 
+https://www.idahostatesman.com/news/business/article230753284.html
 
-
+https://www.brookings.edu/wp-content/uploads/2019/05/GrowingCitiesthatWorkforAll-FINALforWeb.pdf
 
 \section{The Data}
+For the employment numbers, I obtained full data sets from the Bureau of Labor Statistics. This data included a break down by sector, but the sectors didn't directly correspond to the sectors highlighted by the Brookings report. <<Insert how we matched>>
 
+The data for housing prices was obtained from the Ada County Assessor's office. I decided to use the change in Tax Assessed Value (TAV) of properties within Boise, as broken down by the MLS Areas of Boise shown in Figure \ref{fig: mls_map}. TAV was selected over market value because the data set is much more complete, and less subject to bidding fluctuations. There were some outliers that had to be removed, such as lots where new homes were constructed.  
 
 
 
@@ -171,7 +176,7 @@ KEY WORDS: Key word one; Key word two; Key word three; Key word four.
     \centering
     \includegraphics[width= .7\linewidth]{images/Ex_Area_fig.jpg}
     \caption{Correlation Coefficients for MLS Areas of Boise with z-score trim}
-    \label{fig: area_ccl}
+    \label{fig: area_ccl-z}
 \end{figure}
 
 \begin{figure}[H]
@@ -226,7 +231,7 @@ KEY WORDS: Key word one; Key word two; Key word three; Key word four.
      \end{subfigure}
                \begin{subfigure}[b]{0.45\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{SW_fig.jpg}
+         \includegraphics[width=\textwidth]{images/SW_fig.jpg}
          \caption{Southwest Boise Area \& Associated Neighborhoods}
          \label{fig: sw_ccg}
      \end{subfigure}
@@ -236,8 +241,8 @@ KEY WORDS: Key word one; Key word two; Key word three; Key word four.
 
 
 \section{Comments and Conclusions}
-
-
+Tech jobs didn't have the highest VIFF(?).
+Further research could dig further into the details of each job category and how the salary increases of that category played into the changes in housing prices.
 
 \appendix
 \section{Appendix: Technical Details}
@@ -282,7 +287,7 @@ United States Bureau of Labor Statistics (August 3, 2019)
 % Last Modified Date: March 29, 2019
 \newblock \url{https://www.bls.gov/oes/tables.htm}
 
-\bibitem[\protect\astroncite{USC}{2019}]{ACAO:2019}
+\bibitem[\protect\astroncite{USC}{2019}]{USCB:2019}
 United States Census Bureau, Population Division (August 4, 2019)
 \newblock \textit{Annual Estimates of Housing Units for the United States, Regions, Divisions, States, and Counties: April 1, 2010 to July 1, 2018 Release Date: May 2019}.
 % https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=PEP_2018_PEPANNHU&prodType=table
@@ -308,3 +313,5 @@ Shumway, R. H. and Stoffer, D. S. (2011)
 %-----------------------------------------------------------------------------%
 \end{document}
 %-----------------------------------------------------------------------------%
+    \includegraphics[width= .7\linewidth]{images/MLS_Areas.JPG}
+
