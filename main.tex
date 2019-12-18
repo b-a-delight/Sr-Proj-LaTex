@@ -30,7 +30,7 @@
 \renewcommand{\baselinestretch}{1.1}
 
 
-\title{\textbf{Some Title}}
+\title{\textbf{Analysis of Job Influence on Boise House Prices}}
 
 \author{\vspace{11pt}Bridgette Delight}
 
@@ -68,17 +68,12 @@ For the employment numbers, I obtained full data sets from the Bureau of Labor S
 
 The data for housing prices was obtained from the Ada County Assessor's office. I decided to use the change in Tax Assessed Value (TAV) of properties within Boise, as broken down by the MLS Areas of Boise shown in Figure \ref{fig: mls_map}. TAV was selected over market value because the data set is much more complete, and less subject to bidding fluctuations. There were some outliers that had to be removed, such as lots where new homes were constructed.  
 
-
-
-
-\section{Methods}
-
-
-
-
-
-\section{Results}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width= .8\linewidth]{images/MLS_Areas.JPG}
+    \caption{MLS Areas of Boise}
+    \label{fig: mls_map}
+\end{figure}
 
 \begin{table}[H]
     \centering
@@ -89,9 +84,9 @@ The data for housing prices was obtained from the Ada County Assessor's office. 
     \Xhline{1 pt}
     00   & Architecture And Engineering Occupations \\
     \Xhline{1 pt}     
-    01     &  Arts, Design, Entertainment, Sports, And Media...\\
+    01     &  Arts, Design, Entertainment, Sports, And Media $\dots$\\
     \Xhline{1 pt} 
-    02  &  Building And Grounds Cleaning And Maintenance ...\\
+    02  &  Building And Grounds Cleaning And Maintenance $\dots$\\
     \Xhline{1 pt} 
     03  & Business And Financial Operations Occupations\\
     \Xhline{1 pt} 
@@ -131,39 +126,28 @@ The data for housing prices was obtained from the Ada County Assessor's office. 
     \Xhline{1 pt} 
     21     &  Transportation And Material Moving Occupations\\
     \Xhline{1 pt} 
-    22  & Salary: 10,000 - 40,000\\
-    \Xhline{1 pt} 
-    23  & Salary: 40,000 - 70,000\\
-    \Xhline{1 pt} 
-    24  & Salary: 70,000 - 100,000\\
-    \Xhline{1 pt} 
-    25  & Salary: 100,000 - 150,000\\
-    \Xhline{1 pt} 
-    26  & Salary: 150,000 - 200,000\\
-    \Xhline{1 pt} 
-    27  & Salary: 200,000 - 300,000\\
-    \Xhline{1 pt} 
-    28  & Total Housing Unit Change\\
-    \Xhline{1 pt} 
-    29  & Total Population Change\\
-    \Xhline{1 pt} 
-    30  & Total Employee Change \\
-    \Xhline{1 pt} 
     \end{tabular}}
-    \caption{Feature Key Table}
-    \label{tab: feature_key}
+    \caption{Major Job Categories}
+    \label{tab: job_categories}
 \end{table}
 
 
+\section{Methods}
+
+Stepwise method from book "Statistical Analysis and Data Display An Intermediate Course with Examples in R" By Richard M. Heiberger and Burt Holland 
 
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width= .7\linewidth]{images/MLS_Areas.JPG}
-    \caption{MLS Areas of Boise}
-    \label{fig: mls_map}
-\end{figure}
+\section{Results}
+
+
+
+
+
+
+
+
+
 
 \begin{figure}[H]
     \centering
