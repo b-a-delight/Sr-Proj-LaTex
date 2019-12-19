@@ -134,7 +134,7 @@ The data for housing prices was obtained from the Ada County Assessor's office. 
 
 \begin{table}[H]
     \centering
-    \resizebox{.4\textwidth}{!}{
+    \resizebox{.3\textwidth}{!}{
     \begin{tabular}{|l|}
     \Xhline{1 pt}
     \textbf{MLS Area}\\
@@ -168,6 +168,35 @@ The data for housing prices was obtained from the Ada County Assessor's office. 
     \label{tab: job_categories}
 \end{table}
 
+
+\begin{table}[H]
+    \centering
+    \resizebox{.7\textwidth}{!}{
+    \begin{tabular}{|c|l|}
+    \Xhline{1 pt}
+    \textbf{Key}&\textbf{Feature Name}\\
+    \Xhline{1 pt}
+    Job 1     &  Arts, Design, Entertainment, Sports, And Media...\\
+    \Xhline{1 pt} 
+    Job 2  &  Education, Training, And Library Occupations\\
+    \Xhline{1 pt} 
+    Job 3  &  Farming, Fishing, And Forestry Occupations\\
+    \Xhline{1 pt} 
+    Job 4  &  Food Preparation And Serving Related Occupations\\
+    \Xhline{1 pt} 
+    Job 5  & Life, Physical, And Social Science Occupations\\
+    \Xhline{1 pt} 
+    Job 6  &  Management Occupations\\
+    \Xhline{1 pt} 
+    Job 7  & Personal Care And Service Occupations\\
+    \Xhline{1 pt} 
+    Job 8  & Production Occupations\\
+    \Xhline{1 pt} 
+    \end{tabular}}
+    \caption{Feature Key Table}
+    \label{tab: feature_key}
+\end{table}
+
 \section{Methods}
 
 Stepwise method from book "Statistical Analysis and Data Display An Intermediate Course with Examples in R" By Richard M. Heiberger and Burt Holland 
@@ -175,6 +204,7 @@ Stepwise method from book "Statistical Analysis and Data Display An Intermediate
 
 
 \section{Results}
+
 
 
 
@@ -195,79 +225,105 @@ Stepwise method from book "Statistical Analysis and Data Display An Intermediate
 
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width= .7\linewidth]{images/Area_fig.jpg}
-    \caption{Correlation Coefficients for MLS Areas of Boise}
-    \label{fig: area_ccl}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width= .7\linewidth]{images/Ex_Area_fig.jpg}
-    \caption{Correlation Coefficients for MLS Areas of Boise with z-score trim}
-    \label{fig: area_ccl-z}
-\end{figure}
 
-\begin{figure}[H]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/NW_fig.jpg}
-         \caption{Northwest Boise Area \& Associated Neighborhoods}
-         \label{fig: nw_cc}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/BB_fig.jpg}
-         \caption{Boise Bench Area \& Associated Neighborhoods}
-         \label{fig: bb_cc}
-     \end{subfigure}
-          \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/SEB_fig.jpg}
-         \caption{Southeast Boise Area \& Associated Neighborhoods}
-         \label{fig: se_cc}
-     \end{subfigure}
-          \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/NB_fig.jpg}
-         \caption{North Boise Area \& Associated Neighborhoods}
-         \label{fig: nb_cc}
-     \end{subfigure}
-               \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/NE_fig.jpg}
-         \caption{Northeast Boise Area \& Associated Neighborhoods}
-         \label{fig: ne_ccg}
-     \end{subfigure}
-               \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/WB_fig.jpg}
-         \caption{West Boise Area \& Associated Neighborhoods}
-         \label{fig: wb_ccg}
-     \end{subfigure}
-               \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/SWBM_fig.jpg}
-         \caption{Southwest Boise-Meridian Area \& Associated Neighborhoods}
-         \label{fig: swbm_ccg}
-     \end{subfigure}
-               \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/WBM_fig.jpg}
-         \caption{West Boise-Meridian Area \& Associated Neighborhoods}
-         \label{fig: wbm_ccg}
-     \end{subfigure}
-               \begin{subfigure}[b]{0.45\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/SW_fig.jpg}
-         \caption{Southwest Boise Area \& Associated Neighborhoods}
-         \label{fig: sw_ccg}
-     \end{subfigure}
-        \caption{Correlation Coefficients for the Boise Areas and Associated Neighborhoods against chosen features}
-        \label{fig: all_ccg}
-\end{figure}
+% \begin{figure}[H]
+%      \centering
+%      \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/NW_fig.jpg}
+%          \caption{Northwest Boise Area \& Associated Neighborhoods}
+%          \label{fig: nw_cc}
+%      \end{subfigure}
+%      \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/BB_fig.jpg}
+%          \caption{Boise Bench Area \& Associated Neighborhoods}
+%          \label{fig: bb_cc}
+%      \end{subfigure}
+%           \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/SEB_fig.jpg}
+%          \caption{Southeast Boise Area \& Associated Neighborhoods}
+%          \label{fig: se_cc}
+%      \end{subfigure}
+%           \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/NB_fig.jpg}
+%          \caption{North Boise Area \& Associated Neighborhoods}
+%          \label{fig: nb_cc}
+%      \end{subfigure}
+%               \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/NE_fig.jpg}
+%          \caption{Northeast Boise Area \& Associated Neighborhoods}
+%          \label{fig: ne_ccg}
+%      \end{subfigure}
+%               \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/WB_fig.jpg}
+%          \caption{West Boise Area \& Associated Neighborhoods}
+%          \label{fig: wb_ccg}
+%      \end{subfigure}
+%               \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/SWBM_fig.jpg}
+%          \caption{Southwest Boise-Meridian Area \& Associated Neighborhoods}
+%          \label{fig: swbm_ccg}
+%      \end{subfigure}
+%               \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/WBM_fig.jpg}
+%          \caption{West Boise-Meridian Area \& Associated Neighborhoods}
+%          \label{fig: wbm_ccg}
+%      \end{subfigure}
+%               \begin{subfigure}[b]{0.45\textwidth}
+%          \centering
+%          \includegraphics[width=\textwidth]{images/SW_fig.jpg}
+%          \caption{Southwest Boise Area \& Associated Neighborhoods}
+%          \label{fig: sw_ccg}
+%      \end{subfigure}
+%         \caption{Correlation Coefficients for the Boise Areas and Associated Neighborhoods against chosen features}
+%         \label{fig: all_ccg}
+% \end{figure}
+
+\begin{table}[H]
+    \centering
+    \resizebox{.95\textwidth}{!}{
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \Xhline{1pt}
+     MLS Area & Job 1 & Job 2 & Job 3 & Job 4&Job 5&Job 6&Job 7&Job 8 \\
+     \Xhline{1.5 pt}
+     All of Boise &0.36611&-0.26307&0.15814&-0.36333&    -0.14584&\cellcolor{yellow}0.45211&-0.12748&\cellcolor{yellow}0.47975\\
+     \Xhline{1.5 pt}
+    Boise Bench & 0.36798&-0.33047&0.14698&\cellcolor{orange} -0.43073 &-0.08010&\cellcolor{yellow}0.49931&-0.14441&0.48600 \\
+    \Xhline{1 pt}
+    Eagle&0.19249&\cellcolor{orange} -0.46956&0.01081&-0.09641& 0.06221&\cellcolor{yellow}0.47378 &-0.04779&0.21512 \\
+    \Xhline{1 pt}
+    Garden City & 0.35776  &   -0.37517    & 0.04308  &  -0.11594 &-0.01531 & \cellcolor{yellow}0.72626&-0.14176& 0.18140 \\
+    \Xhline{1 pt}
+    North East Boise &0.31353 & -0.31715 & 0.16805&  -0.26209 &-0.06269&\cellcolor{yellow}0.42402&-0.10611& 0.32972\\
+    \Xhline{1 pt}
+    North East Meridian&0.26303&0.05778&0.19900&-0.13221 &\cellcolor{orange}-0.40530&0.41335& -0.15168&\cellcolor{yellow} 0.65689  \\
+    \Xhline{1 pt}
+    North Boise&0.32267&\cellcolor{orange}-0.43187&0.18583&-0.29665&-0.15290&\cellcolor{yellow}0.45399&-0.10170& 0.31955\\
+    \Xhline{1 pt}
+    North West Boise-Garden City&0.39880&-0.23960& 0.12384&-0.41212&-0.10362&\cellcolor{yellow}0.49113&-0.11379&0.43544\\
+    \Xhline{1 pt}
+    South East Boise&0.38686&-0.20812&0.17893&\cellcolor{orange} -0.47297 &-0.16460& 0.46365&-0.13805 & \cellcolor{yellow}0.51952  \\
+    \Xhline{1 pt}
+    South West Boise&0.40088&-0.08211&0.14361& -0.12389 &-0.07752&0.38804&-0.19028&\cellcolor{yellow}0.46263 \\
+    \Xhline{1 pt}
+    South West Boise Meridian&0.35754&-0.18253& 0.10677 &0.07857&-0.19334&\cellcolor{yellow}0.43627&-0.09273&0.41226\\
+    \Xhline{1 pt}
+    West Boise&0.40092&-0.30562&0.13810&\cellcolor{orange}-0.45756& -0.12418&0.48504&-0.13332&\cellcolor{yellow} 0.51681\\
+    \Xhline{1 pt}
+    West Boise Meridian &0.36254&-0.14274&0.16851& -0.28131&-0.24020&0.38619&-0.12467&\cellcolor{yellow}0.60354  \\
+    \Xhline{1 pt} 
+    \end{tabular}}
+    \caption{Correlation Coefficients by MLS Area}
+    \label{tab:my_label}
+\end{table}
 
 
 \section{Comments and Conclusions}
@@ -292,7 +348,7 @@ Further research could dig further into the details of each job category and how
 > data.skin
 \end{verbatim}
 }
-
+\newpage
 %------------------------------------------------------------------------------%
 % References
 %------------------------------------------------------------------------------%
