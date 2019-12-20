@@ -59,78 +59,18 @@ Over the past eight years, home prices in the Boise metro area have increased ve
 
 Earlier this year, the Brookings Institution published a study on employment growth across the nation, and used Boise as one of the case studies. Their analysis highlighted some of the areas where Boise's employment opportunities are growing, as well as the ones that are shrinking. I will use this data as a starting point to determine which sectors to analyze in more detail.
 
-https://www.idahostatesman.com/news/business/article230753284.html
+%https://www.idahostatesman.com/news/business/article230753284.html
 
-https://www.brookings.edu/wp-content/uploads/2019/05/GrowingCitiesthatWorkforAll-FINALforWeb.pdf
+%https://www.brookings.edu/wp-content/uploads/2019/05/GrowingCitiesthatWorkforAll-FINALforWeb.pdf
 
 \section{The Data}
-For the employment numbers, I obtained full data sets from the Bureau of Labor Statistics. This data included a break down by sector, but the sectors didn't directly correspond to the sectors highlighted by the Brookings report. <<Insert how we matched>>
-
-The data for housing prices was obtained from the Ada County Assessor's office. I decided to use the change in Tax Assessed Value (TAV) of properties within Boise, as broken down by the MLS Areas of Boise shown in Figure \ref{fig: mls_map}. TAV was selected over market value because the data set is much more complete, and less subject to bidding fluctuations. There were some outliers that had to be removed, such as lots where new homes were constructed.  
-
+\paragraph{} I contacted the Ada County Assessor's Office to get the data on single family homes in Boise. They sent me all of the residential,not commertial, homes in Boise for 2000-2019. The data for 2019 was trimmed, as it was not complete. The Tax Assessed Value (TAV) was selected over market value because the data set is much more complete, and less subject to bidding fluctuations. I also broke down the houses by the MLS Areas of Boise, see Table \ref{tab: mls_areas} and Figure \ref{fig: mls_map}, to see if the effect of jobs on the TAV if the houses was different by neighborhood. \par
 \begin{figure}[H]
     \centering
     \includegraphics[width= .8\linewidth]{images/MLS_Areas.JPG}
     \caption{MLS Areas of Boise}
     \label{fig: mls_map}
 \end{figure}
-
-\begin{table}[H]
-    \centering
-    \resizebox{.5\textwidth}{!}{
-    \begin{tabular}{|l|}
-    \Xhline{1 pt}
-    \textbf{Job Categories}\\
-    \Xhline{1 pt}
-    Architecture And Engineering Occupations \\
-    \Xhline{1 pt}     
-    Arts, Design, Entertainment, Sports, And Media $\dots$\\
-    \Xhline{1 pt} 
-    Building And Grounds Cleaning And Maintenance $\dots$\\
-    \Xhline{1 pt} 
-    Business And Financial Operations Occupations\\
-    \Xhline{1 pt} 
-    Community And Social Service Occupations\\
-    \Xhline{1 pt} 
-    Computer And Mathematical Occupations\\
-    \Xhline{1 pt} 
-    Construction And Extraction Occupations\\
-    \Xhline{1 pt} 
-    Education, Training, And Library Occupations\\
-    \Xhline{1 pt} 
-    Farming, Fishing, And Forestry Occupations\\
-    \Xhline{1 pt} 
-    Food Preparation And Serving Related Occupations\\
-    \Xhline{1 pt} 
-    Healthcare Practitioner And Technical Occupations\\
-    \Xhline{1 pt} 
-    Healthcare Support Occupations\\
-    \Xhline{1 pt} 
-    Installation, Maintenance, And Repair Occupations\\
-    \Xhline{1 pt} 
-    Legal Occupations\\
-    \Xhline{1 pt} 
-    Life, Physical, And Social Science Occupations\\
-    \Xhline{1 pt} 
-    Management Occupations\\
-    \Xhline{1 pt} 
-    Office And Administrative Support Occupations\\
-    \Xhline{1 pt} 
-    Personal Care And Service Occupations\\
-    \Xhline{1 pt} 
-    Production Occupations\\
-    \Xhline{1 pt} 
-    Protective Service Occupations\\
-    \Xhline{1 pt} 
-    Sales And Related Occupations\\
-    \Xhline{1 pt} 
-    Transportation And Material Moving Occupations\\
-    \Xhline{1 pt} 
-    \end{tabular}}
-    \caption{Major Job Categories}
-    \label{tab: job_categories}
-\end{table}
-
 
 \begin{table}[H]
     \centering
@@ -164,10 +104,62 @@ The data for housing prices was obtained from the Ada County Assessor's office. 
     West Boise Meridian \\
     \Xhline{1 pt} 
     \end{tabular}}
+    \caption{Boise MLS Areas}
+    \label{tab: mls_areas}
+\end{table}
+The housing data needed some cleaning before use. I wanted to find the percent change in value in single family homes from the previous year, I did find that there were some empty lots turned into single family homes that had to be removed, as the change in value was not truly representative.\par
+I obtained the jobs data sets from the Bureau of Labor Statistics. This data included a break down by major job category, see Table \ref{tab: job_categories}, and I found the percent change in employment numbers from the previous year. These job categories don't directly correspond to the sectors highlighted by the Brookings report. 
+
+
+
+\begin{table}[H]
+    \centering
+    \resizebox{.8\textwidth}{!}{
+    \begin{tabular}{|l|l|}
+    \Xhline{1 pt}
+    Architecture And Engineering Occupations &Arts, Design, Entertainment, Sports, And Media $\dots$\\
+    \Xhline{1 pt} 
+    Building And Grounds Cleaning And Maintenance $\dots$& Business And Financial Operations Occupations\\
+    \Xhline{1 pt} 
+    Community And Social Service Occupations& Computer And Mathematical Occupations\\
+    \Xhline{1 pt} 
+    Construction And Extraction Occupations&Education, Training, And Library Occupations\\
+    \Xhline{1 pt} 
+    Farming, Fishing, And Forestry Occupations&
+    Food Preparation And Serving Related Occupations\\
+    \Xhline{1 pt} 
+    Healthcare Practitioner And Technical Occupations&
+    Healthcare Support Occupations\\
+    \Xhline{1 pt} 
+    Installation, Maintenance, And Repair Occupations&
+    Legal Occupations\\
+    \Xhline{1 pt} 
+    Life, Physical, And Social Science Occupations&
+    Management Occupations\\
+    \Xhline{1 pt} 
+    Office And Administrative Support Occupations&
+    Personal Care And Service Occupations\\
+    \Xhline{1 pt} 
+    Production Occupations&
+    Protective Service Occupations\\
+    \Xhline{1 pt} 
+    Sales And Related Occupations&
+    Transportation And Material Moving Occupations\\
+    \Xhline{1 pt} 
+    \end{tabular}}
     \caption{Major Job Categories}
     \label{tab: job_categories}
 \end{table}
 
+
+
+
+
+
+
+\section{Methods}
+
+\paragraph{}I initially developed the model with all of the job categories listed in Table \ref{tab: job_categories}. I the checked the Variance Inflation Factor (VIF) of the model. The VIF is used in regression analysis to assess the collinearity between the predictors, if the result is close to 1 it is good, but if the result is greater than 10 then it shows high multicollinearity. I found that the VIF score was essentially infinite which meant that I could not use the model as it was. I was then advised to perform an Automated Stepwise Regression on the data to see which of the variables I could use. I followed the steps in the Book "Statistical Analysis and Data Display An Intermediate Course with Examples in R" By Richard M. Heiberger and Burt Holland, page 297-311. When I ran the Stepwise Regression the best predictors found can be seen in Table \ref{tab: feature_key}. I then relabeled the job categories for ease of reading in plots.
 
 \begin{table}[H]
     \centering
@@ -197,16 +189,7 @@ The data for housing prices was obtained from the Ada County Assessor's office. 
     \label{tab: feature_key}
 \end{table}
 
-\section{Methods}
-
-Stepwise method from book "Statistical Analysis and Data Display An Intermediate Course with Examples in R" By Richard M. Heiberger and Burt Holland 
-
-
-
-\section{Results}
-
-
-
+I then ran the VIF test as well as checking the residuals
 
 \begin{figure}[H]
     \centering
@@ -224,68 +207,74 @@ Stepwise method from book "Statistical Analysis and Data Display An Intermediate
 
 
 
+\section{Results}
+
+
+\begin{enumerate}
+    \item Arts, Design, Entertainment, Sports, And Media
+        \begin{itemize}
+            \item Art and Design Workers
+            \item Entertainers and Performers, Sports and Related Workers
+            \item Medial and Communication Workers
+        \end{itemize}
+    \item  Education, Training, And Library Occupations
+        \begin{itemize}
+            \item Teachers, all levels
+            \item Librarians, Curators, and Archivists
+            \item Instructors
+        \end{itemize}
+    \item  Farming, Fishing, And Forestry Occupations
+        \begin{itemize}
+            \item  Agricultural Workers
+            \item Fishing and Hunting Workers
+            \item Forest and Conservation Workers
+        \end{itemize}
+    \item  Food Preparation And Serving Related Occupations
+        \begin{itemize}
+            \item Supervisors of Food Preparation and Serving Related Workers
+            \item Cooks and Food Preparation Workers
+            \item Food and Beverage Serving Workers
+            \item Other Food Preparation and Serving Related Workers
+        \end{itemize}
+    \item  Life, Physical, And Social Science Occupations
+        \begin{itemize}
+            \item Life Scientists
+            \item Physical Scientists
+            \item Social Scientists and Related Workers
+        \end{itemize}
+    \item  Management Occupations
+        \begin{itemize}
+            \item Top Executives
+            \item Advertising, Marketing, Promotion, Public Relations, and Sales Managers
+            \item Operations Specialities Managers
+            \item All other Managers
+        \end{itemize}
+    \item  Personal Care And Service Occupations
+        \begin{itemize}
+            \item Supervisors of Personal Care Workers
+            \item Animal Care and Service Workers
+            \item Entertainment Attendants and Related Workers
+            \item Funeral Service Workers
+            \item Personal Appearance Workers
+            \item Tour and Travel Guides
+            \item Other Personal Care Workers
+        \end{itemize}
+    \item  Production Occupations
+        \begin{itemize}
+            \item Supervisors of Production Workers
+            \item Assemblers and Fabricators
+            \item Food Processing Workers
+            \item Metal and Plastic Workers
+            \item Woodworkers
+            \item Plant and System Operators
+        \end{itemize}
+\end{enumerate}
 
 
 
-% \begin{figure}[H]
-%      \centering
-%      \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/NW_fig.jpg}
-%          \caption{Northwest Boise Area \& Associated Neighborhoods}
-%          \label{fig: nw_cc}
-%      \end{subfigure}
-%      \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/BB_fig.jpg}
-%          \caption{Boise Bench Area \& Associated Neighborhoods}
-%          \label{fig: bb_cc}
-%      \end{subfigure}
-%           \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/SEB_fig.jpg}
-%          \caption{Southeast Boise Area \& Associated Neighborhoods}
-%          \label{fig: se_cc}
-%      \end{subfigure}
-%           \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/NB_fig.jpg}
-%          \caption{North Boise Area \& Associated Neighborhoods}
-%          \label{fig: nb_cc}
-%      \end{subfigure}
-%               \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/NE_fig.jpg}
-%          \caption{Northeast Boise Area \& Associated Neighborhoods}
-%          \label{fig: ne_ccg}
-%      \end{subfigure}
-%               \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/WB_fig.jpg}
-%          \caption{West Boise Area \& Associated Neighborhoods}
-%          \label{fig: wb_ccg}
-%      \end{subfigure}
-%               \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/SWBM_fig.jpg}
-%          \caption{Southwest Boise-Meridian Area \& Associated Neighborhoods}
-%          \label{fig: swbm_ccg}
-%      \end{subfigure}
-%               \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/WBM_fig.jpg}
-%          \caption{West Boise-Meridian Area \& Associated Neighborhoods}
-%          \label{fig: wbm_ccg}
-%      \end{subfigure}
-%               \begin{subfigure}[b]{0.45\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{images/SW_fig.jpg}
-%          \caption{Southwest Boise Area \& Associated Neighborhoods}
-%          \label{fig: sw_ccg}
-%      \end{subfigure}
-%         \caption{Correlation Coefficients for the Boise Areas and Associated Neighborhoods against chosen features}
-%         \label{fig: all_ccg}
-% \end{figure}
+
+
+
 
 \begin{figure}[H]
     \centering
@@ -301,31 +290,31 @@ Stepwise method from book "Statistical Analysis and Data Display An Intermediate
     \Xhline{1pt}
      MLS Area & Job 1 & Job 2 & Job 3 & Job 4&Job 5&Job 6&Job 7&Job 8 \\
      \Xhline{1.5 pt}
-     All of Boise &0.36611&-0.26307&0.15814&-0.36333&    -0.14584&\cellcolor{yellow}0.45211&-0.12748&\cellcolor{yellow}0.47975\\
+     All of Boise &0.47244 &-0.25452& 0.22131& 0.42181&0.05528& \cellcolor{yellow}0.51403& 0.13477& 0.49349\\
      \Xhline{1.5 pt}
-    Boise Bench & 0.36798&-0.33047&0.14698&\cellcolor{orange} -0.43073 &-0.08010&\cellcolor{yellow}0.49931&-0.14441&0.48600 \\
+    Boise Bench & 0.37016 &-0.18183 &0.18004& 0.32748& 0.07605&\cellcolor{yellow} 0.47899& 0.15502 &0.47829\\
     \Xhline{1 pt}
-    Eagle&0.19249&\cellcolor{orange} -0.46956&0.01081&-0.09641& 0.06221&\cellcolor{yellow}0.47378 &-0.04779&0.21512 \\
+    Eagle&0.27020& -0.23780& 0.18223 &0.38202&0.18830 &0.45410& 0.16035&\cellcolor{yellow} 0.48101\\
     \Xhline{1 pt}
-    Garden City & 0.35776  &   -0.37517    & 0.04308  &  -0.11594 &-0.01531 & \cellcolor{yellow}0.72626&-0.14176& 0.18140 \\
+    Garden City & 0.47347 &-0.16628& 0.12171& 0.39270 &-0.01083& \cellcolor{yellow}0.54356& 0.05221& 0.35181\\
     \Xhline{1 pt}
-    North East Boise &0.31353 & -0.31715 & 0.16805&  -0.26209 &-0.06269&\cellcolor{yellow}0.42402&-0.10611& 0.32972\\
+    North East Boise &0.44502 &-0.30788 &0.31044 &0.44801 &0.11171 &\cellcolor{yellow} 0.52445 &0.14307& 0.45781\\
     \Xhline{1 pt}
-    North East Meridian&0.26303&0.05778&0.19900&-0.13221 &\cellcolor{orange}-0.40530&0.41335& -0.15168&\cellcolor{yellow} 0.65689  \\
+    North East Meridian& 0.51055 & -0.22300 &0.22524 &0.50716 & -0.08835 & \cellcolor{yellow} 0.60318 & 0.09026& 0.53070\\
     \Xhline{1 pt}
-    North Boise&0.32267&\cellcolor{orange}-0.43187&0.18583&-0.29665&-0.15290&\cellcolor{yellow}0.45399&-0.10170& 0.31955\\
+    North Boise&0.41560 &-0.35709& 0.31848& 0.39945& -0.01637& \cellcolor{yellow}0.49233& 0.09699 &0.37526\\
     \Xhline{1 pt}
-    North West Boise-Garden City&0.39880&-0.23960& 0.12384&-0.41212&-0.10362&\cellcolor{yellow}0.49113&-0.11379&0.43544\\
+    North West Boise-Garden City& \cellcolor{yellow}0.52669 & -0.25098 & 0.15905 & 0.40713& 0.06458 &0.51001& 0.15309 &0.49626\\
     \Xhline{1 pt}
-    South East Boise&0.38686&-0.20812&0.17893&\cellcolor{orange} -0.47297 &-0.16460& 0.46365&-0.13805 & \cellcolor{yellow}0.51952  \\
+    South East Boise& 0.50898& -0.25805& 0.23049&0.42712& 0.07212 & \cellcolor{yellow}0.54420 & 0.10922 &0.50249 \\
     \Xhline{1 pt}
-    South West Boise&0.40088&-0.08211&0.14361& -0.12389 &-0.07752&0.38804&-0.19028&\cellcolor{yellow}0.46263 \\
+    South West Boise& \cellcolor{yellow}0.62526 &-0.32890& 0.30176 & 0.57181 & 0.14149 & 0.57526 & 0.13010 & 0.61330\\
     \Xhline{1 pt}
-    South West Boise Meridian&0.35754&-0.18253& 0.10677 &0.07857&-0.19334&\cellcolor{yellow}0.43627&-0.09273&0.41226\\
+    South West Boise Meridian& \cellcolor{yellow}0.57333 & -0.23180 & 0.25831 & 0.56873 & 0.05242 &0.54541 & 0.16347& 0.57175\\
     \Xhline{1 pt}
-    West Boise&0.40092&-0.30562&0.13810&\cellcolor{orange}-0.45756& -0.12418&0.48504&-0.13332&\cellcolor{yellow} 0.51681\\
+    West Boise&0.49497 &-0.24963&  0.17686& 0.42427& 0.07121 & 0.50468 &0.14486 &\cellcolor{yellow}0.52594\\
     \Xhline{1 pt}
-    West Boise Meridian &0.36254&-0.14274&0.16851& -0.28131&-0.24020&0.38619&-0.12467&\cellcolor{yellow}0.60354  \\
+    West Boise Meridian& 0.49958 &-0.23565& 0.20646& 0.47795& 0.04509 &0.51593& 0.16244 &\cellcolor{yellow}0.55835 \\
     \Xhline{1 pt} 
     \end{tabular}}
     \caption{Correlation Coefficients by MLS Area}
@@ -334,27 +323,9 @@ Stepwise method from book "Statistical Analysis and Data Display An Intermediate
 
 
 \section{Comments and Conclusions}
-Tech jobs didn't have the highest VIFF(?).
-Further research could dig further into the details of each job category and how the salary increases of that category played into the changes in housing prices.
-
-\appendix
-\section{Appendix: Technical Details}
+\paragraph{}I was surprised that Management Occupations was the greatest influence on the TAV of my home in the Boise Bench. I was expecting it to be Computer and Mathematical Occupations, but the computer occupations did not make it through the stepwise regression. Further research could dig further into the details of each job category and how the salary increases of that category played into the changes in housing prices. Also the stepwise regression could be run against each MLS area individually to see if there are different occupations that make it through the stepwise regression other than the occupations listed in Table \ref{tab: feature_key}.
 
 
-
-\section{Appendix: Code}
-
-{\footnotesize
-\begin{verbatim}
-> ### Required packages
-> library(car)                                               # required to use scatterplot()
-> library(HH)                                                # required to use ci.plot()
->
-> ### Read the dataset
-> data.skin <- read.table(file=paste(WD.inp,"skincancer.txt",sep=""),header=TRUE)
-> data.skin
-\end{verbatim}
-}
 \newpage
 %------------------------------------------------------------------------------%
 % References
@@ -372,6 +343,19 @@ Ada County Assessor's Office (July 8, 2019)
 Keller Williams Reality Boise (August 6, 2019)
 \newblock \textit{Boise Neighborhood Guide}.
 \newblock \url{https://www.weknowboise.com/boise-neighborhoods.php}
+
+
+
+
+\bibitem[\protect\astroncite{ESCO}{2019}]{ESCO:2008}
+Escobari, Marcela; Seyal, Ian; Morales-Arilla Jose;and Shearer, Chad (2019)
+\newblock Growing Cities that Work for All
+\newblock \textit{Brookings}.
+
+\bibitem[\protect\astroncite{Heiberger and Holland}{2009}]{Heiberger:Holland:200p}
+Heiberger, R. and Holland, B. (2008)
+\newblock 
+\newblock \textit{Journal of the American Statistical AssociationStatistical Analysis and Data Display: An Intermediate Course with Examples in R}, 297-313.
 
 
 \bibitem[\protect\astroncite{BLS}{2019}]{BLS:2019}
@@ -392,16 +376,16 @@ United States Census Bureau, Population Division (August 4, 2019)
 
 
 
-\bibitem[\protect\astroncite{Chen and Wu}{2008}]{Chen:Wu:2008}
-Chen, J. and Wu, H. (2008)
-\newblock Efficient local estimation for time-varying coefficients in
-deterministic dynamic models with applications to {HIV}-1 dynamics.
-\newblock \textit{Journal of the American Statistical Association}, 103, 369--384.
+% \bibitem[\protect\astroncite{Chen and Wu}{2008}]{Chen:Wu:2008}
+% Chen, J. and Wu, H. (2008)
+% \newblock Efficient local estimation for time-varying coefficients in
+% deterministic dynamic models with applications to {HIV}-1 dynamics.
+% \newblock \textit{Journal of the American Statistical Association}, 103, 369--384.
 
-\bibitem[\protect\astroncite{Shumway and Stoffer}{2011}]{Shumway:Stoffer:2011}
-Shumway, R. H. and Stoffer, D. S. (2011)
-\newblock \textit{Time Series analysis and Its Applications With R Examples}, 3rd edn.
-\newblock New York: Springer.
+% \bibitem[\protect\astroncite{Shumway and Stoffer}{2011}]{Shumway:Stoffer:2011}
+% Shumway, R. H. and Stoffer, D. S. (2011)
+% \newblock \textit{Time Series analysis and Its Applications With R Examples}, 3rd edn.
+% \newblock New York: Springer.
 \end{thebibliography}
 %-----------------------------------------------------------------------------%
 \end{document}
