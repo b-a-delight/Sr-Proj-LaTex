@@ -163,7 +163,7 @@ I obtained the jobs data sets from the Bureau of Labor Statistics. This data inc
 
 \begin{table}[H]
     \centering
-    \resizebox{.7\textwidth}{!}{
+    \resizebox{.6\textwidth}{!}{
     \begin{tabular}{|c|l|}
     \Xhline{1 pt}
     \textbf{Key}&\textbf{Feature Name}\\
@@ -210,6 +210,68 @@ I then ran the VIF test as well as checking the residuals
 \section{Results}
 
 
+
+
+
+
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\linewidth]{images/corr_matrix.jpeg}
+    \caption{Correlation Matrix}
+    \label{fig:corrMatrix}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \resizebox{.95\textwidth}{!}{
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \Xhline{1pt}
+     MLS Area & Job 1 & Job 2 & Job 3 & Job 4&Job 5&Job 6&Job 7&Job 8 \\
+     \Xhline{1.5 pt}
+     All of Boise &0.47244 &-0.25452& 0.22131& 0.42181&0.05528& \cellcolor{yellow}0.51403& 0.13477& 0.49349\\
+     \Xhline{1.5 pt}
+    Boise Bench & 0.37016 &-0.18183 &0.18004& 0.32748& 0.07605&\cellcolor{yellow} 0.47899& 0.15502 &0.47829\\
+    \Xhline{1 pt}
+    Eagle&0.27020& -0.23780& 0.18223 &0.38202&0.18830 &0.45410& 0.16035&\cellcolor{yellow} 0.48101\\
+    \Xhline{1 pt}
+    Garden City & 0.47347 &-0.16628& 0.12171& 0.39270 &-0.01083& \cellcolor{yellow}0.54356& 0.05221& 0.35181\\
+    \Xhline{1 pt}
+    North East Boise &0.44502 &-0.30788 &0.31044 &0.44801 &0.11171 &\cellcolor{yellow} 0.52445 &0.14307& 0.45781\\
+    \Xhline{1 pt}
+    North East Meridian& 0.51055 & -0.22300 &0.22524 &0.50716 & -0.08835 & \cellcolor{yellow} 0.60318 & 0.09026& 0.53070\\
+    \Xhline{1 pt}
+    North Boise&0.41560 &-0.35709& 0.31848& 0.39945& -0.01637& \cellcolor{yellow}0.49233& 0.09699 &0.37526\\
+    \Xhline{1 pt}
+    North West Boise-Garden City& \cellcolor{yellow}0.52669 & -0.25098 & 0.15905 & 0.40713& 0.06458 &0.51001& 0.15309 &0.49626\\
+    \Xhline{1 pt}
+    South East Boise& 0.50898& -0.25805& 0.23049&0.42712& 0.07212 & \cellcolor{yellow}0.54420 & 0.10922 &0.50249 \\
+    \Xhline{1 pt}
+    South West Boise& \cellcolor{yellow}0.62526 &-0.32890& 0.30176 & 0.57181 & 0.14149 & 0.57526 & 0.13010 & 0.61330\\
+    \Xhline{1 pt}
+    South West Boise Meridian& \cellcolor{yellow}0.57333 & -0.23180 & 0.25831 & 0.56873 & 0.05242 &0.54541 & 0.16347& 0.57175\\
+    \Xhline{1 pt}
+    West Boise&0.49497 &-0.24963&  0.17686& 0.42427& 0.07121 & 0.50468 &0.14486 &\cellcolor{yellow}0.52594\\
+    \Xhline{1 pt}
+    West Boise Meridian& 0.49958 &-0.23565& 0.20646& 0.47795& 0.04509 &0.51593& 0.16244 &\cellcolor{yellow}0.55835 \\
+    \Xhline{1 pt} 
+    \end{tabular}}
+    \caption{Correlation Coefficients by MLS Area}
+    \label{tab:my_label}
+\end{table}
+
+
+\section{Comments and Conclusions}
+\paragraph{}I was surprised that Management Occupations was the greatest influence on the TAV of my home in the Boise Bench. I was expecting it to be Computer and Mathematical Occupations, but the computer occupations did not make it through the stepwise regression. Further research could dig further into the details of each job category and how the salary increases of that category played into the changes in housing prices. Also the stepwise regression could be run against each MLS area individually to see if there are different occupations that make it through the stepwise regression other than the occupations listed in Table \ref{tab: feature_key}.
+
+
+\newpage
+
+\section*{Appendix A}\label{appendixA}
+\subsection{Description of Job Categories}
 \begin{enumerate}
     \item Arts, Design, Entertainment, Sports, And Media
         \begin{itemize}
@@ -269,63 +331,6 @@ I then ran the VIF test as well as checking the residuals
             \item Plant and System Operators
         \end{itemize}
 \end{enumerate}
-
-
-
-
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.6\linewidth]{images/corr_matrix.jpeg}
-    \caption{Correlation Matrix}
-    \label{fig:corrMatrix}
-\end{figure}
-
-\begin{table}[H]
-    \centering
-    \resizebox{.95\textwidth}{!}{
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
-    \Xhline{1pt}
-     MLS Area & Job 1 & Job 2 & Job 3 & Job 4&Job 5&Job 6&Job 7&Job 8 \\
-     \Xhline{1.5 pt}
-     All of Boise &0.47244 &-0.25452& 0.22131& 0.42181&0.05528& \cellcolor{yellow}0.51403& 0.13477& 0.49349\\
-     \Xhline{1.5 pt}
-    Boise Bench & 0.37016 &-0.18183 &0.18004& 0.32748& 0.07605&\cellcolor{yellow} 0.47899& 0.15502 &0.47829\\
-    \Xhline{1 pt}
-    Eagle&0.27020& -0.23780& 0.18223 &0.38202&0.18830 &0.45410& 0.16035&\cellcolor{yellow} 0.48101\\
-    \Xhline{1 pt}
-    Garden City & 0.47347 &-0.16628& 0.12171& 0.39270 &-0.01083& \cellcolor{yellow}0.54356& 0.05221& 0.35181\\
-    \Xhline{1 pt}
-    North East Boise &0.44502 &-0.30788 &0.31044 &0.44801 &0.11171 &\cellcolor{yellow} 0.52445 &0.14307& 0.45781\\
-    \Xhline{1 pt}
-    North East Meridian& 0.51055 & -0.22300 &0.22524 &0.50716 & -0.08835 & \cellcolor{yellow} 0.60318 & 0.09026& 0.53070\\
-    \Xhline{1 pt}
-    North Boise&0.41560 &-0.35709& 0.31848& 0.39945& -0.01637& \cellcolor{yellow}0.49233& 0.09699 &0.37526\\
-    \Xhline{1 pt}
-    North West Boise-Garden City& \cellcolor{yellow}0.52669 & -0.25098 & 0.15905 & 0.40713& 0.06458 &0.51001& 0.15309 &0.49626\\
-    \Xhline{1 pt}
-    South East Boise& 0.50898& -0.25805& 0.23049&0.42712& 0.07212 & \cellcolor{yellow}0.54420 & 0.10922 &0.50249 \\
-    \Xhline{1 pt}
-    South West Boise& \cellcolor{yellow}0.62526 &-0.32890& 0.30176 & 0.57181 & 0.14149 & 0.57526 & 0.13010 & 0.61330\\
-    \Xhline{1 pt}
-    South West Boise Meridian& \cellcolor{yellow}0.57333 & -0.23180 & 0.25831 & 0.56873 & 0.05242 &0.54541 & 0.16347& 0.57175\\
-    \Xhline{1 pt}
-    West Boise&0.49497 &-0.24963&  0.17686& 0.42427& 0.07121 & 0.50468 &0.14486 &\cellcolor{yellow}0.52594\\
-    \Xhline{1 pt}
-    West Boise Meridian& 0.49958 &-0.23565& 0.20646& 0.47795& 0.04509 &0.51593& 0.16244 &\cellcolor{yellow}0.55835 \\
-    \Xhline{1 pt} 
-    \end{tabular}}
-    \caption{Correlation Coefficients by MLS Area}
-    \label{tab:my_label}
-\end{table}
-
-
-\section{Comments and Conclusions}
-\paragraph{}I was surprised that Management Occupations was the greatest influence on the TAV of my home in the Boise Bench. I was expecting it to be Computer and Mathematical Occupations, but the computer occupations did not make it through the stepwise regression. Further research could dig further into the details of each job category and how the salary increases of that category played into the changes in housing prices. Also the stepwise regression could be run against each MLS area individually to see if there are different occupations that make it through the stepwise regression other than the occupations listed in Table \ref{tab: feature_key}.
-
-
 \newpage
 %------------------------------------------------------------------------------%
 % References
