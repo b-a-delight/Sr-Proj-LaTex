@@ -161,6 +161,22 @@ I obtained the jobs data sets from the Bureau of Labor Statistics. This data inc
 
 \paragraph{}I initially developed the model with all of the job categories listed in Table \ref{tab: job_categories}. I the checked the Variance Inflation Factor (VIF) of the model. The VIF is used in regression analysis to assess the collinearity between the predictors, if the result is close to 1 it is good, but if the result is greater than 10 then it shows high multicollinearity. I found that the VIF score was essentially infinite which meant that I could not use the model as it was. I was then advised to perform an Automated Stepwise Regression on the data to see which of the variables I could use. I followed the steps in the Book "Statistical Analysis and Data Display An Intermediate Course with Examples in R" By Richard M. Heiberger and Burt Holland, page 297-311. When I ran the Stepwise Regression the best predictors found can be seen in Table \ref{tab: feature_key}. I then relabeled the job categories for ease of reading in plots.
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{.3\linewidth}
+    \includegraphics[width =\linewidth]{images/InfVif.PNG}
+    \caption{VIF for All Job Categories}
+    \label{fig:infVif}
+    \end{subfigure}
+    \begin{subfigure}[b]{.6\linewidth}
+    \includegraphics[width =\linewidth]{images/InfVif.PNG}
+    \caption{VIF with Best Model}
+    \label{fig:bestVIF}
+    \end{subfigure}
+    \caption{Variance Inflation Factor (VIF)}
+    \label{fig:vif}
+\end{figure}
+
 \begin{table}[H]
     \centering
     \resizebox{.6\textwidth}{!}{
